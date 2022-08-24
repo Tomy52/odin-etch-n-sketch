@@ -6,6 +6,9 @@ function populateRow(columnName){
         let square = document.createElement("div");
         square.setAttribute("class", "gridElement");
         square.setAttribute("id", "gridElement" + i);
+        square.addEventListener('mouseover', () => {
+            square.classList.add('hovered')
+        })
         
         let h1 = document.createElement("h1");
         
@@ -27,3 +30,5 @@ function createGrid(){
     }
     console.log("Done!")
 }
+
+createGrid()
