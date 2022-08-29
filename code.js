@@ -32,3 +32,24 @@ function createGrid(){
 }
 
 createGrid()
+
+let clearBtn = document.getElementById('clear-grid')
+
+function unpopulateRow(columnName) {
+    for (let i = 0; i <= 15; i++){
+        columnName.childNodes[i].classList.remove('hovered')
+    }
+}
+
+function clearGrid(){
+    for(let i = 1; i <= 16; ++i) {
+
+        let column = document.getElementById('gridColumn' + i);
+        unpopulateRow(column)
+    }
+    console.log("Done!")
+}
+
+clearBtn.addEventListener('click', () => {
+    clearGrid()
+})
