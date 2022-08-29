@@ -1,7 +1,7 @@
 let container = document.querySelector('.container')
 
-function populateRow(columnName){
-    for(let i = 1; i <= 16; ++i){
+function populateRow(columnName, size){
+    for(let i = 1; i <= size; ++i){
 
         let square = document.createElement("div");
         square.setAttribute("class", "gridElement");
@@ -18,20 +18,20 @@ function populateRow(columnName){
         }
 }
 
-function createGrid(){
-    for(let i =1; i <= 16; ++i) {
+function createGrid(size){
+    for(let i =1; i <= size; ++i) {
 
         let column = document.createElement("div");
         column.setAttribute("class","gridColumn");
         column.setAttribute("id", "gridColumn" + i);
         container.appendChild(column);
 
-        populateRow(column);
+        populateRow(column, size);
     }
     console.log("Done!")
 }
 
-createGrid()
+createGrid(16)
 
 let clearBtn = document.getElementById('clear-grid')
 
