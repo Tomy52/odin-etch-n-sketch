@@ -64,5 +64,13 @@ function changeSize(size){
 
 changeSizeBtn.addEventListener('click', () => {
     let size = prompt('What size do you want the grid to be?')
-    changeSize(size)
+    if (size > 0 && size <= 100){
+        changeSize(size)
+    } else if (size > 100){
+        console.log("This is too much!")
+    } else if (size === 0){
+        console.log("I can't draw a 0x0 grid!")
+    } else if (size < 0){
+        console.log("I can't draw a negative-sized grid!")
+    }  
 })
