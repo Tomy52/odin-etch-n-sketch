@@ -53,3 +53,16 @@ function clearGrid(){
 clearBtn.addEventListener('click', () => {
     clearGrid()
 })
+
+let changeSizeBtn = document.getElementById('change-size')
+
+function changeSize(size){
+    container.textContent = ""
+    createGrid(size)
+}
+
+
+changeSizeBtn.addEventListener('click', () => {
+    let size = prompt('What size do you want the grid to be?')
+    changeSize(size)
+})
