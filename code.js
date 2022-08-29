@@ -35,17 +35,17 @@ createGrid(16)
 
 let clearBtn = document.getElementById('clear-grid')
 
-function unpopulateRow(columnName) {
-    for (let i = 0; i <= 15; i++){
+function unpopulateRow(columnName,size) {
+    for (let i = 0; i <= (size - 1); i++){
         columnName.childNodes[i].classList.remove('hovered')
     }
 }
 
 function clearGrid(){
-    for(let i = 1; i <= 16; ++i) {
+    for(let i = 1; i <= container.childElementCount; ++i) {
 
         let column = document.getElementById('gridColumn' + i);
-        unpopulateRow(column)
+        unpopulateRow(column,(container.childElementCount))
     }
     console.log("Done!")
 }
